@@ -180,7 +180,7 @@ app.delete('/api/party/:id', (req, res) => {
 
 // Updates a candidate's party
 app.put('/api/candidate/:id', (req, res) => {
-    const errors = inputCheck(req.bodym, 'party_id');
+    const errors = inputCheck(req.body, 'party_id');
 
     if (errors) {
         res.status(400).json({error: errors});
@@ -209,6 +209,7 @@ app.put('/api/candidate/:id', (req, res) => {
         }
     });
 });
+
 
 
 // Default response for any other request (Not Found)
