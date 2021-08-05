@@ -3,6 +3,8 @@ const router = express.Router();
 const db = require('../../db/connection');
 const inputCheck = require('../../utils/inputCheck');
 
+
+
 // Get all candidates
 router.get('/candidates', (req, res) => {
     const sql =  `SELECT candidates.*, parties.name 
@@ -98,6 +100,7 @@ router.post('/candidate', ({ body }, res) => {
     });
 });
 
+
 // Updates a candidate's party
 router.put('/candidate/:id', (req, res) => {
     const errors = inputCheck(req.body, 'party_id');
@@ -129,5 +132,7 @@ router.put('/candidate/:id', (req, res) => {
         }
     });
 });
+
+
 
 module.exports = router;
